@@ -1,5 +1,4 @@
 
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from booktest.models import BookInfo # 导入图书模型类
@@ -47,9 +46,9 @@ def detail(request, bid):
     # 1.根据bid查询图书信息
     book = BookInfo.objects.get(id=bid)
     # 2.查询和book关联的英雄信息
-    heros = book.heroinfo_set.all()
+   # heros = book.heroinfo_set.all()
     # 3.使用模板
-    return render(request, 'booktest/detail.html', {'book':book, 'heros':heros})
+    return render(request, 'booktest/detail.html', {'book':book})
 
 
 
